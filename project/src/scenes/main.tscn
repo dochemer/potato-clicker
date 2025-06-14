@@ -1,0 +1,599 @@
+[gd_scene load_steps=33 format=3 uid="uid://cru688dp0cq0c"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_155is"]
+[ext_resource type="Script" path="res://score.gd" id="1_xhnml"]
+[ext_resource type="Script" path="res://player.gd" id="3_jjppe"]
+[ext_resource type="Texture2D" uid="uid://gqtpudwcy1yp" path="res://Assets/imgs/potato_transparent.png" id="3_yo1rr"]
+[ext_resource type="Texture2D" uid="uid://b721af15jf7uk" path="res://Assets/imgs/garden-glove.png" id="5_iqn6f"]
+[ext_resource type="Texture2D" uid="uid://c8w6ix352vdwq" path="res://Assets/imgs/farmers-market.png" id="6_acycw"]
+[ext_resource type="AudioStream" uid="uid://5mh7qebmb0ts" path="res://Assets/sounds/switch11.wav" id="7_oij3j"]
+[ext_resource type="Texture2D" uid="uid://bkp804mhta8nb" path="res://Assets/imgs/shovel.png" id="7_wvpaf"]
+[ext_resource type="Texture2D" uid="uid://y151klh306i8" path="res://Assets/tilesets/tilesheet_complete.png" id="8_jyhwp"]
+[ext_resource type="Texture2D" uid="uid://d3xpscabpwy6" path="res://Assets/imgs/tractor.png" id="8_lafkl"]
+[ext_resource type="Texture2D" uid="uid://cn4i4o18gg1sn" path="res://Assets/imgs/wheelbarrow.png" id="9_w2y8c"]
+[ext_resource type="Script" path="res://picker.gd" id="11_nuthh"]
+[ext_resource type="Texture2D" uid="uid://fw0aobqe1nms" path="res://Assets/imgs/food-truck.png" id="11_ygjcp"]
+[ext_resource type="Script" path="res://picker_button.gd" id="12_bi88j"]
+[ext_resource type="Script" path="res://market.gd" id="13_sknsx"]
+[ext_resource type="Texture2D" uid="uid://bnvlp4illebj0" path="res://Assets/imgs/chipshop.png" id="15_0vreq"]
+[ext_resource type="Script" path="res://market_button.gd" id="15_w85v6"]
+[ext_resource type="Script" path="res://food_van.gd" id="16_oj48e"]
+[ext_resource type="Texture2D" uid="uid://ccje8lom10jum" path="res://Assets/imgs/factory.png" id="17_ipevk"]
+[ext_resource type="Script" path="res://food_van_button.gd" id="18_pu57q"]
+[ext_resource type="Script" path="res://chip_shop.gd" id="19_7uidf"]
+[ext_resource type="Script" path="res://chip_shop_button.gd" id="21_d62qw"]
+[ext_resource type="Script" path="res://factory.gd" id="22_t5pdw"]
+[ext_resource type="Script" path="res://factory_button.gd" id="24_dvsqn"]
+[ext_resource type="Script" path="res://power_station.gd" id="25_g1u56"]
+[ext_resource type="Texture2D" uid="uid://b7ot2nlts5wf1" path="res://Assets/imgs/power-station.png" id="26_cj50v"]
+[ext_resource type="Script" path="res://power_station_button.gd" id="27_qfejp"]
+[ext_resource type="Script" path="res://distillery.gd" id="28_3oqfg"]
+[ext_resource type="Texture2D" uid="uid://dc7jwrujqemw5" path="res://Assets/imgs/distillery.png" id="28_cs3f0"]
+[ext_resource type="Script" path="res://distillery_button.gd" id="30_da78w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kshs3"]
+texture = ExtResource("8_jyhwp")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+2:0/0/terrains_peering_bit/top_right_corner = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/terrains_peering_bit/top_left_corner = 0
+3:0/0/terrains_peering_bit/top_side = 0
+3:0/0/terrains_peering_bit/top_right_corner = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+21:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gmok8"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.866667, 0.305882, 0.329412, 1)
+sources/0 = SubResource("TileSetAtlasSource_kshs3")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_155is")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 13.0
+offset_right = 150.0
+offset_bottom = 52.0
+theme_type_variation = &"HeaderLarge"
+text = "Score: 0"
+script = ExtResource("1_xhnml")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(344, 373)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_yo1rr")
+script = ExtResource("3_jjppe")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="ClickEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_oij3j")
+volume_db = 12.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="ClickEffect"]
+tile_set = SubResource("TileSet_gmok8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 740.0
+offset_top = 2.0
+offset_right = 1200.0
+offset_bottom = 110.0
+
+[node name="ShovelBonus" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("7_wvpaf")
+icon_alignment = 1
+
+[node name="WheelBarrowBonus" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("9_w2y8c")
+icon_alignment = 1
+
+[node name="TractorBonus" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("8_lafkl")
+icon_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 740.0
+offset_top = 112.0
+offset_right = 1200.0
+offset_bottom = 780.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PickerResource" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("11_nuthh")
+
+[node name="PickerButton" type="Button" parent="ScrollContainer/VBoxContainer/PickerResource"]
+layout_mode = 2
+icon = ExtResource("5_iqn6f")
+script = ExtResource("12_bi88j")
+
+[node name="PickerLabel" type="Label" parent="ScrollContainer/VBoxContainer/PickerResource"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Picker
+"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/PickerResource"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/PickerResource"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "x1, 100 Coins"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarketResource" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("13_sknsx")
+
+[node name="MarketButton" type="Button" parent="ScrollContainer/VBoxContainer/MarketResource"]
+layout_mode = 2
+icon = ExtResource("6_acycw")
+script = ExtResource("15_w85v6")
+
+[node name="MarketLabel" type="Label" parent="ScrollContainer/VBoxContainer/MarketResource"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Potato Market"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/MarketResource"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/MarketResource"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="FoodVan" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+script = ExtResource("16_oj48e")
+
+[node name="FoodVanButton" type="Button" parent="ScrollContainer/VBoxContainer/FoodVan"]
+layout_mode = 2
+icon = ExtResource("11_ygjcp")
+script = ExtResource("18_pu57q")
+
+[node name="FoodVanLabel" type="Label" parent="ScrollContainer/VBoxContainer/FoodVan"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Jacket Potato
+Van"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/FoodVan"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/FoodVan"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ChipShop" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("19_7uidf")
+
+[node name="ChipShopButton" type="Button" parent="ScrollContainer/VBoxContainer/ChipShop"]
+layout_mode = 2
+icon = ExtResource("15_0vreq")
+script = ExtResource("21_d62qw")
+
+[node name="ChipShopLabel" type="Label" parent="ScrollContainer/VBoxContainer/ChipShop"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Chip Shop"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/ChipShop"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/ChipShop"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Factory" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("22_t5pdw")
+
+[node name="FactoryButton" type="Button" parent="ScrollContainer/VBoxContainer/Factory"]
+layout_mode = 2
+icon = ExtResource("17_ipevk")
+script = ExtResource("24_dvsqn")
+
+[node name="FactoryLabel" type="Label" parent="ScrollContainer/VBoxContainer/Factory"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Crisp Factory"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/Factory"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/Factory"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PowerStation" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("25_g1u56")
+
+[node name="PowerStationButton" type="Button" parent="ScrollContainer/VBoxContainer/PowerStation"]
+layout_mode = 2
+icon = ExtResource("26_cj50v")
+script = ExtResource("27_qfejp")
+
+[node name="PowerStationLabel" type="Label" parent="ScrollContainer/VBoxContainer/PowerStation"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Potato Power Station"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/PowerStation"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/PowerStation"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Distillery" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("28_3oqfg")
+
+[node name="DistilleryButton" type="Button" parent="ScrollContainer/VBoxContainer/Distillery"]
+layout_mode = 2
+icon = ExtResource("28_cs3f0")
+script = ExtResource("30_da78w")
+
+[node name="DistilleryLabel" type="Label" parent="ScrollContainer/VBoxContainer/Distillery"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Potato Distillery"
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="ScrollContainer/VBoxContainer/Distillery"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/VBoxContainer/Distillery"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "<<Cost>>"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
