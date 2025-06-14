@@ -1,3 +1,6 @@
-##Potato Clicker
-This is the initial version of the README file.
-Needs to be updated later.
+## Potato Clicker
+A simple clicker game that is designed for Godot 4.3.
+
+The code is written using GDScript and it utilises a variety of GUI nodes such as:
+- buttons
+- vertical and horizontal containers
